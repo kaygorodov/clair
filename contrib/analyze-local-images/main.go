@@ -352,6 +352,7 @@ func historyFromCommand(imageName string) ([]string, error) {
 	scanner := bufio.NewScanner(stdout)
 	for scanner.Scan() {
 		layers = append(layers, scanner.Text())
+		break
 	}
 
 	for i := len(layers)/2 - 1; i >= 0; i-- {
